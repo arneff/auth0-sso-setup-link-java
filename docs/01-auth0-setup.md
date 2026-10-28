@@ -36,10 +36,12 @@ That initial login happens via username/password, so you need a Database Connect
 2. You can use the default **Username-Password-Authentication** connection or create a new one.
 3. Make sure the connection is **enabled for your Regular Web Application**:
    - Open the connection > **Applications** tab > toggle on your app.
-4. Create a test user:
-   - Go to **User Management > Users > Create User**.
-   - Enter an email and password, and select your Database Connection.
-   - This is the admin user who will log in to generate SSO setup links.
+4. Create an admin user — choose either method:
+   - **Dashboard:** Go to **User Management > Users > Create User**, enter an email and password,
+     and select your Database Connection.
+   - **Universal Login:** Start the app (step 3 in [03-running-the-app.md](03-running-the-app.md)),
+     navigate to `http://localhost:8080`, click **Login with Auth0**, and use the **Sign Up** tab
+     on the Universal Login page.
 
 > **Note:** This user will later be added as a member of an organization (step 3 below).
 > Their initial login uses username/password; after SSO is configured for the org,
@@ -52,8 +54,11 @@ That initial login happens via username/password, so you need a Database Connect
 1. Go to **Organizations** in the left sidebar.
 2. If prompted, enable the feature for your tenant.
 3. Click **Create Organization**, give it a name (e.g. `acme-corp`).
-4. Under the organization's **Members** tab, add the admin user you created in step 2.
-5. Go to the organization's **Applications** tab and enable your Regular Web Application.
+4. Go to the organization's **Connections** tab, click **Enable Connections**, and enable your
+   Database Connection (e.g. `Username-Password-Authentication`). This allows org members to
+   log in with username/password before any enterprise SSO connection is set up.
+5. Under the organization's **Members** tab, add the admin user you created in step 2.
+6. Go to the organization's **Applications** tab and enable your Regular Web Application.
 
 ### Configure the app for Organizations
 

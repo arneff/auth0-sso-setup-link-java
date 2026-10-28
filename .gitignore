@@ -1,0 +1,16 @@
+# Build output
+target/
+
+# Credentials — never commit
+.env
+
+# Local SSL trust store (machine-specific)
+.ssl/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# macOS
+.DS_Store
